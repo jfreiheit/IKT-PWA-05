@@ -4,11 +4,11 @@ let closeCreatePostModalButton = document.querySelector('#close-create-post-moda
 let sharedMomentsArea = document.querySelector('#shared-moments');
 
 function openCreatePostModal() {
-  createPostArea.style.visibility = 'visible';
+  createPostArea.style.transform = 'translateY(0)';
 }
 
 function closeCreatePostModal() {
-  createPostArea.style.visibility = 'hidden';
+  createPostArea.style.transform = 'translateY(100vH)';
 }
 
 shareImageButton.addEventListener('click', openCreatePostModal);
@@ -24,7 +24,6 @@ function createCard(card) {
   image.src = card.image_id;
   cardTitle.style.backgroundImage = 'url('+ image.src +')';
   cardTitle.style.backgroundSize = 'cover';
-  cardTitle.style.height = '180px';
   cardWrapper.appendChild(cardTitle);
   let cardTitleTextElement = document.createElement('h2');
   cardTitleTextElement.className = 'mdl-card__title-text';
