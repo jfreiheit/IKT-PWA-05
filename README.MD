@@ -1,46 +1,45 @@
-# Progressive Web Apps - Aktuelle Trends der IKT 2022
+# Progressive Web Apps - Aktuelle Trends der IKT 2023
 
 Dieses Projekt enthält das Grundgerüst einer Webanwendung. Auf diesem Grundgerüst bauen wir auf und fügen sukzessive *progressive* Funktionalitäten hinzu, so dass am Ende eine *Progressive Web Application* entsteht.
 
 ## Stand und Branches
 
-Der aktuelle Stand ist der Zustand des Frontends bevor wir uns mit der IndexedDB beschäftigen. Das zugehörige Backend kann [hier](https://github.com/jfreiheit/IKT-PWA-BACKEND-01) geklont werden.
+Der aktuelle Stand ist der Zustand des Frontends bevor wir uns mit Kamera und IndexedDB beschäftigen. Das zugehörige Backend kann [hier](https://github.com/jfreiheit/IKT-PWA-BACKEND-01) geklont werden.
 
 Branches
 
 - vor_kamera
 - nach_kamera
 
-siehe `git checkout --track origin/nach_kamera` 
-
+siehe `git checkout --track origin/nach_kamera`
 
 ## Installation
 
-- Zum Ausführen des Projektes wird [Node.js](https://nodejs.org) verendet. Sie müssen es auf Ihren Rechner installieren. 
+- Zum Ausführen des Projektes wird [Node.js](https://nodejs.org) verendet. Sie müssen es auf Ihren Rechner installieren.
 
 - In der Wahl Ihrer IDE sind Sie völlig frei. Empfehlungen finden Sie unter [https://freiheit.f4.htw-berlin.de/ikt/tools/#integrated-development-environment-ide](https://freiheit.f4.htw-berlin.de/ikt/tools/#integrated-development-environment-ide)
 
-- Zum Starten des Projektes wechseln Sie im Terminal (Terminal Ihres Rechners oder das Terminal in der IDE) in den Projektordner (`cd IKT-PWA-04`) und führen dort 
+- Zum Starten des Projektes wechseln Sie im Terminal (Terminal Ihres Rechners oder das Terminal in der IDE) in den Projektordner (`cd IKT-PWA-04`) und führen dort
 
-	`npm install` 
+ `npm install`
 
-	aus. Damit werden alle erforderlichen Abhängigkeiten installiert.
+ aus. Damit werden alle erforderlichen Abhängigkeiten installiert.
 
 - Nach erfolgreicher Installation der Abhängigkeiten, geben Sie  
 
-	`npm start` 
+ `npm start`
 
-	ein, um Ihr Projekt auszuführen. Klicken Sie danach auf [localhost:8080](http://localhost:8080) oder geben Sie die URL direkt in Ihren Browser ein.
+ ein, um Ihr Projekt auszuführen. Klicken Sie danach auf [localhost:8080](http://localhost:8080) oder geben Sie die URL direkt in Ihren Browser ein.
 
 - Sollten Sie Änderungen an der IMplementierung vornehmen und diese ausprobieren wollen, müssen Sie den Server zunächst wieder stoppen:
 
-	`Ctrl-C`
+ `Ctrl-C`
 
-	und geben dann erneut 
+ und geben dann erneut
 
-	`npm start` 
+ `npm start`
 
-	ein. 
+ ein.
 
 ## Anpassungen
 
@@ -48,9 +47,9 @@ Wir verwenden [Material Design Lite](https://getmdl.io/) für das Design unserer
 
 `href="https://code.getmdl.io/1.3.0/material.blue_grey-red.min.css"`
 
-Andere Farbkombinationen finden Sie [hier](https://getmdl.io/customize/#cdn-code). Es genügt auch, die entsprechenden Farben in den Dateinamen einzutragen 
+Andere Farbkombinationen finden Sie [hier](https://getmdl.io/customize/#cdn-code). Es genügt auch, die entsprechenden Farben in den Dateinamen einzutragen
 
-`material.{primary}-{accent}.min.css` 
+`material.{primary}-{accent}.min.css`
 
 (z.B. `material.indigo-pink.min.css`).
 
@@ -61,5 +60,3 @@ Sie können natürlich auch ein anderes Bild als das HTW-Bild einbinden. Beachte
 --
 
 Binden Sie ruhig Ihr eigenes `favicon.ico` in den Projektordner ein. Erstellen können Sie sich ein solches `favicon` z.B. [hier](https://favicon.io/) oder [hier](https://www.ionos.de/tools/favicon-generator). Macht Spaß und gibt allen Ihren Webanwendungen eine persönliche Note ;-).
-
- 

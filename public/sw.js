@@ -1,6 +1,3 @@
-importScripts('/src/js/idb.js');
-importScripts('/src/js/db.js');
-
 const CACHE_VERSION = 2;
 const CURRENT_STATIC_CACHE = 'static-v'+CACHE_VERSION;
 const CURRENT_DYNAMIC_CACHE = 'dynamic-v'+CACHE_VERSION;
@@ -51,41 +48,22 @@ self.addEventListener('fetch', event => {
     if (event.request.url.indexOf('http') !== 0) return; // skip the request. if request is not made with http protocol
 
     const url = 'http://localhost:3000/posts';
-    if(event.request.url.indexOf(url) >= 0) {
-        event.respondWith(
-            fetch(event.request)
-                .then ( res => {
-                    const clonedResponse = res.clone();
-                    clearAllData('posts')
-                    .then( () => {
-                        clonedResponse.json()
-                        .then( data => {
-                            for(let key in data)
-                            {
-                                writeData('posts', data[key]);
-                            }
-                        })
-                    })
-                    return res;
-                })
-        )
-    } else {
-        event.respondWith(
-            caches.match(event.request)
-                .then( response => {
-                    if(response) {
-                        return response;
-                    } else {
-                        return fetch(event.request)
-                            .then( res => {     // nicht erneut response nehmen, haben wir schon
-                                return caches.open(CURRENT_DYNAMIC_CACHE)      // neuer, weiterer Cache namens dynamic
-                                    .then( cache => {
-                                        cache.put(event.request.url, res.clone());
-                                        return res;
-                                    })
-                            });
-                    }
-                })
-        )
+    event.respondWith(
+        caches.match(event.request)
+            .then( response => {
+                if(response) {
+                    return response;
+                } else {
+                    return fetch(event.request)
+                        .then( res => {     // nicht erneut response nehmen, haben wir schon
+                            return caches.open(CURRENT_DYNAMIC_CACHE)      // neuer, weiterer Cache namens dynamic
+                                .then( cache => {
+                                    cache.put(event.request.url, res.clone());
+                                    return res;
+                                })
+                        });
+                }
+            })
+    )
     }
-})
+)
